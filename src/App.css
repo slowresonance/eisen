@@ -46,8 +46,10 @@ body {
 }
 
 .cell-body {
+  min-height: 300px;
   max-height: 300px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .add-task {
@@ -72,6 +74,10 @@ body {
   border-radius: 4px;
   background: var(--c-3);
   padding: 2px 8px 4px 8px;
+}
+
+.cell-1:first-child svg {
+  stroke: var(--c-e);
 }
 
 .completed {

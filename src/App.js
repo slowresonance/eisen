@@ -18,8 +18,6 @@ function App() {
   const [taskTarget, setTaskTarget] = useState("");
   const inputRef = useRef();
 
-  console.log(tasks);
-
   useEffect(() => {
     if (taskTarget !== "") {
       inputRef.current.focus();
@@ -57,8 +55,43 @@ function App() {
     });
   }, []);
 
+  const reorder = (droppableId, startIndex, endindex) => {
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
+
+    const [reorderedTask] = updatedTasks[droppableId].splice(startIndex, 1);
+
+    updatedTasks[droppableId].splice(endindex, 0, reorderedTask);
+
+    setTasks(updatedTasks);
+  };
+
+  const move = (source, destination) => {
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
+
+    const [removedTask] = updatedTasks[source.droppableId].splice(
+      source.index,
+      1
+    );
+
+    updatedTasks[destination.droppableId].splice(
+      destination.index,
+      0,
+      removedTask
+    );
+
+    setTasks(updatedTasks);
+  };
+
   const handleOnDragEnd = (result) => {
-    console.log(result);
+    const { source, destination } = result;
+
+    if (!destination) return;
+
+    if (source.droppableId === destination.droppableId) {
+      reorder(source.droppableId, source.index, destination.index);
+    } else {
+      move(source, destination);
+    }
   };
 
   return (

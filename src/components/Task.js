@@ -9,7 +9,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
   const handleDelete = () => {
     if (task.done === false) return;
 
-    let updatedTasks = Object.assign({}, tasks);
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
     updatedTasks[taskType] = tasks[taskType].filter(
       (item) => item.id !== task.id
     );
@@ -18,7 +18,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
   };
 
   const updateTasks = () => {
-    let updatedTasks = Object.assign({}, tasks);
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
 
     updatedTasks[taskType] = tasks[taskType].map((item) => {
       if (item.id === task.id) {
@@ -58,7 +58,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
       {(provided) => (
         <div
           id={task.id}
-          className={`task ${task.done && "completed"}`}
+          className={`task ${taskType} ${task.done ? "completed" : ""}`}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

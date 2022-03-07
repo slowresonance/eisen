@@ -38,7 +38,7 @@ const Input = ({
       });
     });
 
-    let updatedTasks = Object.assign({}, tasks);
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
 
     for (let cell in updatedTasks) {
       if (cell === taskTarget) {
