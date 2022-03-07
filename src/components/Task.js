@@ -58,7 +58,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
       {(provided) => (
         <div
           id={task.id}
-          className={`task ${taskType} ${task.done ? "completed" : ""}`}
+          className={`task ${taskType} ${task.done ? "done" : ""}`}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
@@ -74,7 +74,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
           {toggle ? (
             <span
               tabIndex="0"
-              className="task-content"
+              className={`task-content`}
               onClick={handleDelete}
               onDoubleClick={() => {
                 setToggle(!toggle);

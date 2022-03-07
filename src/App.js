@@ -16,6 +16,7 @@ function App() {
   const [cells, setCells] = useState(defaultCells);
   const [tasks, setTasks] = useState(retrieveData());
   const [taskTarget, setTaskTarget] = useState("");
+  const [movedStatus, updateMovedStatus] = useState(false);
   const inputRef = useRef();
 
   useEffect(() => {
@@ -55,6 +56,26 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
+    for (let cell in tasks) {
+      let notdone = [];
+      let done = [];
+
+      tasks[cell].forEach((task) => {
+        if (task.done === false) {
+          notdone.push(task);
+        } else {
+          done.push(task);
+        }
+      });
+
+      updatedTasks[cell] = [...notdone, ...done];
+    }
+    setTasks(updatedTasks);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [movedStatus]);
+
   const reorder = (droppableId, startIndex, endindex) => {
     const updatedTasks = JSON.parse(JSON.stringify(tasks));
 
@@ -84,7 +105,6 @@ function App() {
 
   const handleOnDragEnd = (result) => {
     const { source, destination } = result;
-
     if (!destination) return;
 
     if (source.droppableId === destination.droppableId) {
@@ -92,6 +112,8 @@ function App() {
     } else {
       move(source, destination);
     }
+
+    updateMovedStatus(!movedStatus);
   };
 
   return (

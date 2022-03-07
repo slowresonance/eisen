@@ -80,7 +80,7 @@ body {
   stroke: var(--c-e);
 }
 
-.completed {
+.done {
   color: var(--c-5);
   text-decoration: line-through;
 }

@@ -1,6 +1,7 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 
 const Checkbox = ({ task, taskType, tasks, setTasks }) => {
+  const [checkboxChange, updateCheckboxChange] = useState(false);
   const handleCompleted = () => {
     let updatedTasks = Object.assign({}, tasks);
 
@@ -13,9 +14,29 @@ const Checkbox = ({ task, taskType, tasks, setTasks }) => {
       }
       return item;
     });
-
+    updateCheckboxChange(!checkboxChange);
     setTasks(updatedTasks);
   };
+
+  useEffect(() => {
+    const updatedTasks = JSON.parse(JSON.stringify(tasks));
+    for (let cell in tasks) {
+      let notdone = [];
+      let done = [];
+
+      tasks[cell].forEach((task) => {
+        if (task.done === false) {
+          notdone.push(task);
+        } else {
+          done.push(task);
+        }
+      });
+
+      updatedTasks[cell] = [...notdone, ...done];
+    }
+    setTasks(updatedTasks);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkboxChange]);
 
   return (
     <span className="checkbox">
