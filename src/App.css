@@ -68,12 +68,16 @@ body {
   cursor: pointer;
 }
 
-.edit-task {
+.edit-text {
   color: var(--c-e);
   background-color: var(--c-2);
   border-radius: 4px;
   background: var(--c-3);
   padding: 5px 8px 4px 8px;
+}
+
+.edit-title {
+  width: 60%;
 }
 
 .cell-1:first-child svg {

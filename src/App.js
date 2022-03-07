@@ -12,8 +12,21 @@ const retrieveData = () => {
   }
 };
 
+const retrieveCells = () => {
+  if (localStorage.getItem("matrixbeta-cells")) {
+    return JSON.parse(localStorage.getItem("matrixbeta-cells"));
+  } else {
+    return [
+      { type: "cell-1", title: "Do it" },
+      { type: "cell-2", title: "Schedule it" },
+      { type: "cell-3", title: "Automate it" },
+      { type: "cell-4", title: "Delete it" },
+    ];
+  }
+};
+
 function App() {
-  const [cells, setCells] = useState(defaultCells);
+  const [cells, setCells] = useState(retrieveCells());
   const [tasks, setTasks] = useState(retrieveData());
   const [taskTarget, setTaskTarget] = useState("");
   const [movedStatus, updateMovedStatus] = useState(false);
@@ -28,6 +41,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem("matrixbeta", JSON.stringify(tasks));
   }, [tasks]);
+
+  useEffect(() => {
+    localStorage.setItem("matrixbeta-cells", JSON.stringify(cells));
+  }, [cells]);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -120,9 +137,10 @@ function App() {
     <Fragment>
       <div id="matrix">
         <DragDropContext onDragEnd={handleOnDragEnd}>
-          {cells.map((cell) => (
+          {cells.map((cell, index) => (
             <Cell
               cell={cell}
+              cells={cells}
               setCells={setCells}
               tasks={tasks}
               setTasks={setTasks}

@@ -39,7 +39,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
   };
 
   const handleEditExit = (e) => {
-    if (e.key === "Escape") {
+    if (e.key === "Escape" || e.key === "Tab") {
       setToggle(true);
       setContent(task.content);
       e.preventDefault();
@@ -88,7 +88,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
               type="text"
               spellCheck="false"
               autoComplete="chrome-off"
-              className="edit-task"
+              className="edit-text"
               defaultValue={content}
               onChange={(e) => {
                 setContent(e.target.value);
