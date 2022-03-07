@@ -2,12 +2,13 @@ import { useEffect, useRef, useState, Fragment } from "react";
 import "./App.css";
 import Cell from "./components/Cell";
 import Input from "./components/Input";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const retrieveData = () => {
   if (localStorage.getItem("matrixbeta")) {
     return JSON.parse(localStorage.getItem("matrixbeta"));
   } else {
-    return [];
+    return { "cell-1": [], "cell-2": [], "cell-3": [], "cell-4": [] };
   }
 };
 
@@ -16,6 +17,8 @@ function App() {
   const [tasks, setTasks] = useState(retrieveData());
   const [taskTarget, setTaskTarget] = useState("");
   const inputRef = useRef();
+
+  console.log(tasks);
 
   useEffect(() => {
     if (taskTarget !== "") {
@@ -54,19 +57,25 @@ function App() {
     });
   }, []);
 
+  const handleOnDragEnd = (result) => {
+    console.log(result);
+  };
+
   return (
     <Fragment>
       <div id="matrix">
-        {cells.map((cell) => (
-          <Cell
-            cell={cell}
-            setCells={setCells}
-            tasks={tasks}
-            setTasks={setTasks}
-            setTaskTarget={setTaskTarget}
-            key={cell.type}
-          ></Cell>
-        ))}
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          {cells.map((cell) => (
+            <Cell
+              cell={cell}
+              setCells={setCells}
+              tasks={tasks}
+              setTasks={setTasks}
+              setTaskTarget={setTaskTarget}
+              key={cell.type}
+            ></Cell>
+          ))}
+        </DragDropContext>
       </div>
       {taskTarget !== "" ? (
         <Input

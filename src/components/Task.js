@@ -1,32 +1,41 @@
 import { React, useState } from "react";
 import Checkbox from "./Checkbox";
+import { Draggable } from "react-beautiful-dnd";
 
-const Task = ({ task, tasks, setTasks }) => {
+const Task = ({ taskType, task, tasks, setTasks, index }) => {
   const [toggle, setToggle] = useState(true);
   const [content, setContent] = useState(task.content);
 
   const handleDelete = () => {
     if (task.done === false) return;
-    setTasks(tasks.filter((item) => item.id !== task.id));
+
+    let updatedTasks = Object.assign({}, tasks);
+    updatedTasks[taskType] = tasks[taskType].filter(
+      (item) => item.id !== task.id
+    );
+
+    setTasks(updatedTasks);
   };
 
-  const updateTodos = () => {
-    setTasks(
-      tasks.map((item) => {
-        if (item.id === task.id) {
-          return {
-            ...item,
-            content: content,
-          };
-        }
-        return item;
-      })
-    );
+  const updateTasks = () => {
+    let updatedTasks = Object.assign({}, tasks);
+
+    updatedTasks[taskType] = tasks[taskType].map((item) => {
+      if (item.id === task.id) {
+        return {
+          ...item,
+          content: content,
+        };
+      }
+      return item;
+    });
+
+    setTasks(updatedTasks);
   };
 
   const handleEditBlur = (e) => {
     setToggle(true);
-    updateTodos();
+    updateTasks();
   };
 
   const handleEditExit = (e) => {
@@ -38,46 +47,59 @@ const Task = ({ task, tasks, setTasks }) => {
     }
     if (e.key === "Enter") {
       setToggle(true);
-      updateTodos();
+      updateTasks();
       e.preventDefault();
       e.stopPropagation();
     }
   };
 
   return (
-    <div
-      id={task.id}
-      className={`task ${task.done && "completed"}`}
-      // onKeyPress={(e) => e.key === "Enter" && handleCompleted}
-    >
-      <Checkbox task={task} tasks={tasks} setTasks={setTasks}></Checkbox>
-      {toggle ? (
-        <span
-          tabIndex="0"
-          className="task-content"
-          onClick={handleDelete}
-          onDoubleClick={() => {
-            setToggle(!toggle);
-          }}
+    <Draggable draggableId={task.id} index={index}>
+      {(provided) => (
+        <div
+          id={task.id}
+          className={`task ${task.done && "completed"}`}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+
+          // onKeyPress={(e) => e.key === "Enter" && handleCompleted}
         >
-          {content}
-        </span>
-      ) : (
-        <input
-          autoFocus
-          type="text"
-          spellCheck="false"
-          autoComplete="chrome-off"
-          className="edit-task"
-          defaultValue={content}
-          onChange={(e) => {
-            setContent(e.target.value);
-          }}
-          onKeyDown={handleEditExit}
-          onBlur={handleEditBlur}
-        />
+          <Checkbox
+            task={task}
+            tasks={tasks}
+            setTasks={setTasks}
+            taskType={taskType}
+          ></Checkbox>
+          {toggle ? (
+            <span
+              tabIndex="0"
+              className="task-content"
+              onClick={handleDelete}
+              onDoubleClick={() => {
+                setToggle(!toggle);
+              }}
+            >
+              {content}
+            </span>
+          ) : (
+            <input
+              autoFocus
+              type="text"
+              spellCheck="false"
+              autoComplete="chrome-off"
+              className="edit-task"
+              defaultValue={content}
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
+              onKeyDown={handleEditExit}
+              onBlur={handleEditBlur}
+            />
+          )}
+        </div>
       )}
-    </div>
+    </Draggable>
   );
 };
 

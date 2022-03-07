@@ -1,5 +1,6 @@
-import React from "react";
+import { React, useState } from "react";
 import Task from "./Task";
+import { Droppable } from "react-beautiful-dnd";
 
 const Cell = ({ cell, setCells, tasks, setTasks, setTaskTarget }) => {
   const handleTaskHandler = (e) => {
@@ -20,18 +21,27 @@ const Cell = ({ cell, setCells, tasks, setTasks, setTaskTarget }) => {
           + Add new task
         </div>
       </div>
-      <div className="cell-body">
-        {tasks
-          .filter((task) => task.type === cell.type)
-          .map((task) => (
-            <Task
-              task={task}
-              tasks={tasks}
-              setTasks={setTasks}
-              key={task.id}
-            ></Task>
-          ))}
-      </div>
+      <Droppable droppableId={cell.type}>
+        {(provided) => (
+          <div
+            className="cell-body"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {tasks[cell.type].map((task, index) => (
+              <Task
+                task={task}
+                taskType={cell.type}
+                tasks={tasks}
+                setTasks={setTasks}
+                key={task.id}
+                index={index}
+              ></Task>
+            ))}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
     </div>
   );
 };

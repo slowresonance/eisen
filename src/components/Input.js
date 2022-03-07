@@ -30,18 +30,25 @@ const Input = ({
       contentPipe.push(e.target.value);
     }
 
-    console.log(contentPipe);
-
     contentPipe.forEach((content) => {
       tasksPipe.push({
         id: randID(6),
         content: content,
-        type: taskTarget,
         done: false,
       });
     });
 
-    setTasks([...tasks, ...tasksPipe]);
+    let updatedTasks = Object.assign({}, tasks);
+
+    for (let cell in updatedTasks) {
+      if (cell === taskTarget) {
+        tasksPipe.forEach((task) => {
+          updatedTasks[cell].push(task);
+        });
+      }
+    }
+
+    setTasks(updatedTasks);
 
     e.target.value = "";
     setTaskTarget("");

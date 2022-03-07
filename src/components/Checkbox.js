@@ -1,18 +1,20 @@
 import React from "react";
 
-const Checkbox = ({ task, tasks, setTasks }) => {
+const Checkbox = ({ task, taskType, tasks, setTasks }) => {
   const handleCompleted = () => {
-    setTasks(
-      tasks.map((item) => {
-        if (item.id === task.id) {
-          return {
-            ...item,
-            done: !item.done,
-          };
-        }
-        return item;
-      })
-    );
+    let updatedTasks = Object.assign({}, tasks);
+
+    updatedTasks[taskType] = tasks[taskType].map((item) => {
+      if (item.id === task.id) {
+        return {
+          ...item,
+          done: !item.done,
+        };
+      }
+      return item;
+    });
+
+    setTasks(updatedTasks);
   };
 
   return (
