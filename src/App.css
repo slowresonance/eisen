@@ -73,7 +73,7 @@ body {
   background-color: var(--c-2);
   border-radius: 4px;
   background: var(--c-3);
-  padding: 2px 8px 4px 8px;
+  padding: 5px 8px 4px 8px;
 }
 
 .cell-1:first-child svg {
