@@ -36,13 +36,14 @@ body {
 
 .cell-head {
   color: var(--c-e);
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-height: 30px;
 }
 
 .cell-body {
