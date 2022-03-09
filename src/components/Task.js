@@ -6,9 +6,7 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
   const [toggle, setToggle] = useState(true);
   const [content, setContent] = useState(task.content);
 
-  const handleDelete = () => {
-    if (task.done === false) return;
-
+  const deleteTask = () => {
     const updatedTasks = JSON.parse(JSON.stringify(tasks));
     updatedTasks[taskType] = tasks[taskType].filter(
       (item) => item.id !== task.id
@@ -17,7 +15,16 @@ const Task = ({ taskType, task, tasks, setTasks, index }) => {
     setTasks(updatedTasks);
   };
 
+  const handleDelete = () => {
+    if (task.done === false) return;
+    deleteTask();
+  };
+
   const updateTasks = () => {
+    if (content === "") {
+      return deleteTask();
+    }
+
     const updatedTasks = JSON.parse(JSON.stringify(tasks));
 
     updatedTasks[taskType] = tasks[taskType].map((item) => {
