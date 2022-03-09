@@ -7,7 +7,7 @@
 </h4>
 
 <div align="center">
-  <img alt="Eisen Matrix" width="90%" src="./images/Screenshot%202022-03-09%20065829.png"/>
+  <img alt="Eisen Matrix" width="90%" src="./images/eisen-matrix.png"/>
 </div>
 
 ## Description
