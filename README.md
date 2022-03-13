@@ -29,6 +29,7 @@ All data is written into your browser's local storage and not stored anywhere el
 - [x] Edit the titles of cells
 - [x] Add multiple tasks in a single go
 - [x] Edit the tasks once they are added
+- [x] Undo tasks once deleted
 
 - [ ] Ability to add hidden tasks
 - [ ] Ability to change colors

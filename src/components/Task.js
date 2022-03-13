@@ -2,17 +2,31 @@ import { React, useState } from "react";
 import Checkbox from "./Checkbox";
 import { Draggable } from "react-beautiful-dnd";
 
-const Task = ({ taskType, task, tasks, setTasks, index }) => {
+const Task = ({
+  taskType,
+  task,
+  tasks,
+  setTasks,
+  setDeletedTask,
+  setDeletedTaskType,
+  index,
+}) => {
   const [toggle, setToggle] = useState(true);
   const [content, setContent] = useState(task.content);
 
   const deleteTask = () => {
     const updatedTasks = JSON.parse(JSON.stringify(tasks));
+
+    setDeletedTask(task);
+    setDeletedTaskType(taskType);
+
     updatedTasks[taskType] = tasks[taskType].filter(
       (item) => item.id !== task.id
     );
-
     setTasks(updatedTasks);
+    setTimeout(function () {
+      setDeletedTaskType("");
+    }, 10000);
   };
 
   const handleDelete = () => {

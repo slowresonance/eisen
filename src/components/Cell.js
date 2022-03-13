@@ -2,7 +2,16 @@ import { React, useState } from "react";
 import Task from "./Task";
 import { Droppable } from "react-beautiful-dnd";
 
-const Cell = ({ cell, cells, setCells, tasks, setTasks, setTaskTarget }) => {
+const Cell = ({
+  cell,
+  cells,
+  setCells,
+  tasks,
+  setTasks,
+  setTaskTarget,
+  setDeletedTask,
+  setDeletedTaskType,
+}) => {
   const [toggle, setToggle] = useState(true);
   const [title, setTitle] = useState(cell.title);
 
@@ -94,6 +103,8 @@ const Cell = ({ cell, cells, setCells, tasks, setTasks, setTaskTarget }) => {
                 setTasks={setTasks}
                 key={task.id}
                 index={index}
+                setDeletedTask={setDeletedTask}
+                setDeletedTaskType={setDeletedTaskType}
               ></Task>
             ))}
             {provided.placeholder}

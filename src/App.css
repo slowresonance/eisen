@@ -8,7 +8,7 @@ body {
 }
 
 #matrix {
-  margin: 10vh auto;
+  margin: 7vh auto;
   max-width: 900px;
   display: -ms-grid;
   display: grid;
@@ -95,6 +95,47 @@ body {
   padding: 0 8px 2px 0;
 }
 
+#undo {
+  display: flex;
+  flex-direction: row;
+  width: 30ch;
+  justify-content: space-between;
+  color: var(--c-a);
+  background-color: var(--c-3);
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 3em;
+  z-index: 5;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
+    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
+    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
+    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
+    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
+    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
+    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
+    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
+    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+}
+
+#undo-text {
+  margin-bottom: 1px;
+}
+
+#undo-link {
+  font-weight: 400;
+  color: var(--c-e);
+  cursor: pointer;
+  margin-left: 2em;
+}
+
+#undo-link:hover {
+  cursor: pointer;
+}
+
 svg {
   outline: none;
   border: none;
@@ -110,7 +151,7 @@ svg {
   bottom: 3em;
   margin: 0 auto;
   max-width: 50ch;
-  z-index: 2;
+  z-index: 10;
   -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
     0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
     0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
@@ -174,14 +215,16 @@ textarea {
 }
 
 :root {
-  --c-a: #aaa;
-  --c-e: #eee;
   --c-2: #222;
   --c-3: #333;
   --c-4: #444;
   --c-5: #555;
   --c-7: #777;
   --c-8: #888;
+  --c-c: #ccc;
+  --c-a: #aaa;
+  --c-e: #eee;
+  --c-f: #fff;
 }
 
 *::-webkit-scrollbar {

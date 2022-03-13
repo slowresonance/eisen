@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, Fragment } from "react";
 import "./App.css";
 import Cell from "./components/Cell";
 import Input from "./components/Input";
+import Undo from "./components/Undo";
 import { DragDropContext } from "react-beautiful-dnd";
 
 const retrieveData = () => {
@@ -30,6 +31,8 @@ function App() {
   const [tasks, setTasks] = useState(retrieveData());
   const [taskTarget, setTaskTarget] = useState("");
   const [movedStatus, updateMovedStatus] = useState(false);
+  const [deletedTask, setDeletedTask] = useState({});
+  const [deletedTaskType, setDeletedTaskType] = useState("");
   const inputRef = useRef();
 
   useEffect(() => {
@@ -146,6 +149,8 @@ function App() {
               setTasks={setTasks}
               setTaskTarget={setTaskTarget}
               key={cell.type}
+              setDeletedTask={setDeletedTask}
+              setDeletedTaskType={setDeletedTaskType}
             ></Cell>
           ))}
         </DragDropContext>
@@ -159,6 +164,18 @@ function App() {
           taskTarget={taskTarget}
           setTaskTarget={setTaskTarget}
         ></Input>
+      ) : (
+        ""
+      )}
+
+      {deletedTaskType !== "" ? (
+        <Undo
+          tasks={tasks}
+          deletedTask={deletedTask}
+          setTasks={setTasks}
+          deletedTaskType={deletedTaskType}
+          setDeletedTaskType={setDeletedTaskType}
+        ></Undo>
       ) : (
         ""
       )}
