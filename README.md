@@ -67,4 +67,4 @@ Reordering acts as a way to visually prioritize tasks within their cells. Moving
 
 - Reordering and Moving tasks can be done by dragging and dropping them
 
-The current version only partially supports drag and drop using the keyboard. Will be fixed
+The current version only partially supports drag and drop using the keyboard. Will be fixed.
