@@ -33,6 +33,7 @@ function App() {
   const [movedStatus, updateMovedStatus] = useState(false);
   const [deletedTask, setDeletedTask] = useState({});
   const [deletedTaskType, setDeletedTaskType] = useState("");
+  const undoTimerRef = useRef(null);
   const inputRef = useRef();
 
   useEffect(() => {
@@ -135,6 +136,16 @@ function App() {
 
     updateMovedStatus(!movedStatus);
   };
+
+  useEffect(() => {
+    if (deletedTaskType !== "") {
+      undoTimerRef.current = setTimeout(function () {
+        setDeletedTaskType("");
+      }, 10000);
+    } else {
+      clearTimeout(undoTimerRef.current);
+    }
+  }, [deletedTaskType]);
 
   return (
     <Fragment>

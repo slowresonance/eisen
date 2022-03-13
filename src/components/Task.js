@@ -24,9 +24,6 @@ const Task = ({
       (item) => item.id !== task.id
     );
     setTasks(updatedTasks);
-    setTimeout(function () {
-      setDeletedTaskType("");
-    }, 10000);
   };
 
   const handleDelete = () => {
