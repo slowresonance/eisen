@@ -54,6 +54,11 @@ const Input = ({
     setTaskTarget("");
   };
 
+  const handleInputBlur = (e) => {
+    e.target.value = "";
+    setTaskTarget("");
+  };
+
   const genPlaceholder = () => {
     const placeholder = cells.find((data) => data.type === taskTarget).title;
     return `@${placeholder.toLowerCase().replace(" ", "-")}`;
@@ -70,6 +75,7 @@ const Input = ({
         ref={inputRef}
         placeholder={genPlaceholder()}
         onKeyPress={handleInput}
+        onBlur={handleInputBlur}
       />
     </div>
   );

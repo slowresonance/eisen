@@ -51,7 +51,7 @@ const Task = ({
     setTasks(updatedTasks);
   };
 
-  const handleEditBlur = (e) => {
+  const handleEditBlur = () => {
     setToggle(true);
     updateTasks();
   };
