@@ -58,11 +58,15 @@ body {
   padding: 0.5em 0 0.1em 0;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .task:hover {
   cursor: pointer;
+}
+
+.task-content {
+  padding-bottom: 10px;
 }
 
 .edit-text {
@@ -86,9 +90,11 @@ body {
   text-decoration: line-through;
 }
 
-.checkbox svg {
+.checkbox {
+  width: 24px;
+  height: 24px;
   stroke: var(--c-5);
-  padding: 0 8px 2px 0;
+  padding: 0 8px 8px 0;
 }
 
 #undo {
