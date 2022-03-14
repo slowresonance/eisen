@@ -141,7 +141,7 @@ function App() {
     if (deletedTaskType !== "") {
       undoTimerRef.current = setTimeout(function () {
         setDeletedTaskType("");
-      }, 10000);
+      }, 6000);
     } else {
       clearTimeout(undoTimerRef.current);
     }
