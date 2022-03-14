@@ -13,17 +13,13 @@ body {
 }
 
 #matrix {
-  margin: 7vh auto;
+  margin: 3em auto;
   max-width: 900px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr)) [auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .cell {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 1.5em 1.5em 0.5em 1.5em;
 }
@@ -41,11 +37,7 @@ body {
 .cell-head {
   color: var(--c-e);
   margin-bottom: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   min-height: 30px;
 }
@@ -108,16 +100,10 @@ body {
   background-color: var(--c-3);
   border-radius: 8px;
   padding: 0.6em 1em;
-  position: -webkit-sticky;
   position: sticky;
   bottom: 3em;
   z-index: 5;
   margin: 0 auto;
-  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
     0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
     0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
@@ -150,17 +136,11 @@ svg {
 }
 
 #input-container {
-  position: -webkit-sticky;
+  display: flex;
+  justify-content: center;
   position: sticky;
   bottom: 3em;
-  margin: 0 auto;
-  max-width: 50ch;
   z-index: 10;
-  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
     0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
     0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
@@ -179,10 +159,12 @@ textarea {
 }
 
 #task-input {
+  max-width: 50ch;
   padding: 10px 10px 10px 15px;
   border-radius: 8px;
   color: var(--c-e);
   background: var(--c-3);
+  margin: 0 1em;
 }
 
 .visually-hidden {
@@ -199,22 +181,27 @@ textarea {
   background-color: var(--c-2);
 }
 
-@media (max-width: 820px) {
+@media (max-width: 801px) {
   .cell:nth-child(1),
   .cell:nth-child(2),
   .cell:nth-child(3) {
     border: none;
   }
   .cell-body {
-    max-height: -webkit-fit-content;
-    max-height: -moz-fit-content;
     max-height: fit-content;
+    min-height: 3em;
     overflow-y: auto;
   }
   .cell {
-    min-height: -webkit-fit-content;
-    min-height: -moz-fit-content;
     min-height: fit-content;
+    margin-bottom: 2em;
+  }
+  #matrix {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto 3em auto;
+  }
+  #input-container {
+    bottom: 1em;
   }
 }
 
@@ -229,6 +216,8 @@ textarea {
   --c-a: #aaa;
   --c-e: #eee;
   --c-f: #fff;
+
+  --m-c: calc(1vh / 1vw);
 }
 
 *::-webkit-scrollbar {

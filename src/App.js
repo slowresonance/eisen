@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, Fragment } from "react";
-import "./App.css";
+import "./styles/App.css";
 import Cell from "./components/Cell";
 import Input from "./components/Input";
 import Undo from "./components/Undo";
