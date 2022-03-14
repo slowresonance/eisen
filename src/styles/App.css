@@ -266,4 +266,8 @@ textarea {
 *::-webkit-scrollbar-thumb:hover {
   background-color: var(--c-5);
 }
+
+[data-rbd-drag-handle-context-id] {
+  cursor: pointer !important;
+}
 /*# sourceMappingURL=app.css.map */
