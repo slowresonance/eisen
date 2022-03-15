@@ -48,6 +48,9 @@ const Checkbox = ({ task, taskType, tasks, setTasks }) => {
         xmlns="http://www.w3.org/2000/svg"
         tabIndex="0"
         onClick={handleCompleted}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleCompleted();
+        }}
       >
         {task.done ? (
           <polyline points="20 6 9 17 4 12"></polyline>

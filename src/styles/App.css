@@ -80,7 +80,9 @@ body {
   line-height: 1.5;
 }
 
-.task-content:focus {
+.task-content:focus,
+.add-task:focus,
+#undo-link {
   border-bottom: 1px dashed var(--c-7);
   outline: none;
 }

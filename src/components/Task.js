@@ -97,6 +97,10 @@ const Task = ({
               onDoubleClick={() => {
                 setToggle(!toggle);
               }}
+              onKeyDown={(e) => {
+                e.key === "Enter" &&
+                  (task.done === false ? setToggle(!toggle) : deleteTask());
+              }}
             >
               {content}
             </span>

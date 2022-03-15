@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useRef, useEffect } from "react";
 
 const Undo = ({
   tasks,
@@ -7,6 +7,14 @@ const Undo = ({
   deletedTaskType,
   setDeletedTaskType,
 }) => {
+  const undoRef = useRef();
+
+  useEffect(() => {
+    if (deletedTaskType !== "") {
+      undoRef.current.focus();
+    }
+  }, [deletedTaskType]);
+
   const undo = () => {
     if (deletedTaskType === "") return;
 
@@ -20,7 +28,15 @@ const Undo = ({
   return (
     <div id="undo">
       <div id="undo-text">Task deleted</div>
-      <div id="undo-link" onClick={undo}>
+      <div
+        id="undo-link"
+        onClick={undo}
+        tabIndex="0"
+        ref={undoRef}
+        onKeyDown={(e) => {
+          e.key === "Enter" && undo();
+        }}
+      >
         Undo
         <svg
           width="14"
