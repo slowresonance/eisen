@@ -298,4 +298,58 @@ textarea {
   border-radius: 4px;
   border: 1px dashed var(--c-7);
 }
+
+.slide-in {
+  -webkit-animation: slide-in 1000ms;
+          animation: slide-in 1000ms;
+}
+
+.slide-out {
+  -webkit-animation: slide-out 1000ms;
+          animation: slide-out 1000ms;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
 /*# sourceMappingURL=app.css.map */

@@ -273,3 +273,29 @@ textarea {
   border-radius: 4px;
   border: 1px dashed var(--c-7);
 }
+
+.slide-in {
+  animation: slide-in 1000ms;
+}
+
+.slide-out {
+  animation: slide-out 1000ms;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
