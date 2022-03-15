@@ -82,7 +82,7 @@ body {
 
 .task-content:focus,
 .add-task:focus,
-#undo-link {
+#undo-link:focus {
   border-bottom: 1px dashed var(--c-7);
   outline: none;
 }
