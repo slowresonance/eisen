@@ -33,7 +33,7 @@ const Input = ({
     contentPipe.forEach((content) => {
       tasksPipe.push({
         id: randID(6),
-        content: content,
+        content: content.trim(),
         done: false,
       });
     });

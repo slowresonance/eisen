@@ -14,6 +14,28 @@ const Task = ({
   const [toggle, setToggle] = useState(true);
   const [content, setContent] = useState(task.content);
 
+  const parseContent = () => {
+    return { __html: parseSecret() };
+  };
+
+  const parseSecret = () => {
+    const message = task.content;
+    const flag = message[0] === "" ? 1 : 0;
+    const result = message.split(/~(.*?)~/) || [];
+    const html = result.reduce((acc, val, index) => {
+      if (val === "") return acc;
+      if ((index + flag) % 2 === 0) {
+        return acc.concat(val);
+      } else {
+        return acc.concat(`<span class="secret">${val}</span>`);
+      }
+    });
+    console.log(html);
+    return html;
+  };
+
+  parseSecret();
+
   const deleteTask = () => {
     const updatedTasks = JSON.parse(JSON.stringify(tasks));
 
@@ -101,9 +123,8 @@ const Task = ({
                 e.key === "Enter" &&
                   (task.done === false ? setToggle(!toggle) : deleteTask());
               }}
-            >
-              {content}
-            </span>
+              dangerouslySetInnerHTML={parseContent()}
+            ></span>
           ) : (
             <input
               autoFocus

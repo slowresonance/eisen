@@ -206,12 +206,12 @@ textarea {
   display: none;
 }
 
-.hidden {
+.secret {
   color: var(--c-3);
   background-color: var(--c-3);
 }
 
-.hidden:hover {
+.secret:hover {
   color: var(--c-a);
   background-color: var(--c-2);
 }
