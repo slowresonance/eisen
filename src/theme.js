@@ -6,15 +6,15 @@ function Theme(client) {
 
   this.active = {};
   this.default = {
-    background: "#eeeeee",
-    f_high: "#0a0a0a",
-    f_med: "#4a4a4a",
-    f_low: "#6a6a6a",
-    f_inv: "#111111",
-    b_high: "#a1a1a1",
-    b_med: "#c1c1c1",
-    b_low: "#ffffff",
-    b_inv: "#ffb545",
+    f_high: "#eee",
+    f_mid: "#ccc",
+    f_low: "#aaa",
+    f_inv: "#777",
+    b_high: "#333",
+    b_mid: "#444",
+    b_low: "#555",
+    b_inv: "#666",
+    background: "#222",
   };
 
   // Callbacks
