@@ -30,9 +30,10 @@ All data is written into your browser's local storage and not stored anywhere el
 - [x] Add multiple tasks in a single go
 - [x] Edit the tasks once they are added
 - [x] Undo tasks once deleted
+- [x] Ability to add hidden tasks
+- [x] Ability to change colors
 
-- [ ] Ability to add hidden tasks
-- [ ] Ability to change colors
+- [ ] Authentication and syncing
 
 ## Usage
 

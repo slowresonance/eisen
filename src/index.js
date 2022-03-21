@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Theme from "./theme";
+
+const theme = new Theme();
+theme.install(document.body);
+theme.start();
 
 ReactDOM.render(
   <React.StrictMode>

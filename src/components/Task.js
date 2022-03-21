@@ -30,7 +30,6 @@ const Task = ({
         return acc.concat(`<span class="secret">${val}</span>`);
       }
     });
-    console.log(html);
     return html;
   };
 
