@@ -26,6 +26,27 @@ const retrieveCells = () => {
   }
 };
 
+const dateToYMD = (date) => {
+  var strArray = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  var d = date.getDate();
+  var m = strArray[date.getMonth()];
+  var y = date.getFullYear();
+  return "" + (d <= 9 ? "0" + d : d) + "-" + m + "-" + y;
+};
+
 function App() {
   const [cells, setCells] = useState(retrieveCells());
   const [tasks, setTasks] = useState(retrieveData());
@@ -35,6 +56,31 @@ function App() {
   const [deletedTaskType, setDeletedTaskType] = useState("");
   const undoTimerRef = useRef(null);
   const inputRef = useRef();
+
+  const exportTasks = () => {
+    const filename = `eisen-${dateToYMD(new Date())}.json`;
+    const blob = new Blob([localStorage.getItem("matrixbeta")], {
+      type: "text/json",
+    });
+
+    console.log(blob);
+    const link = document.createElement("a");
+
+    link.download = filename;
+    link.href = window.URL.createObjectURL(blob);
+    link.dataset.downloadurl = ["text/json", link.download, link.href].join(
+      ":"
+    );
+
+    const event = new MouseEvent("click", {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    link.dispatchEvent(event);
+    link.remove();
+  };
 
   useEffect(() => {
     if (taskTarget !== "") {
