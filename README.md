@@ -41,9 +41,9 @@ All data is written into your browser's local storage and not stored anywhere el
 
 #### - Clicking on "Add new task"
 
-You can click on the Link (which will be replaced with a button in a future version) to add a new task. An input form will be focused and it also shows the cell you are adding the task to.
+You can click on the Link `+ Add new task` to add a new task. An input form will be focused and it also shows the cell you are adding the task to.
 
-#### - Use `Alt` + `1-4`
+#### - Use `Alt` + `1` to `4`
 
 You can also add tasks by using the keyboard combination of `Alt` + `1` to `4`. The numbers are mapped in `row-major-order`.
 
