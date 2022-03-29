@@ -3,6 +3,7 @@ import "./styles/App.css";
 import Cell from "./components/Cell";
 import Input from "./components/Input";
 import Undo from "./components/Undo";
+import Menu from "./components/Menu";
 import { DragDropContext } from "react-beautiful-dnd";
 
 const retrieveData = () => {
