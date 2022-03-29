@@ -61,7 +61,7 @@ const Input = ({
 
   const genPlaceholder = () => {
     const placeholder = cells.find((data) => data.type === taskTarget).title;
-    return `@${placeholder.toLowerCase().replace(" ", "-")}`;
+    return `@${placeholder.toLowerCase().replaceAll(" ", "-")}`;
   };
 
   return (
