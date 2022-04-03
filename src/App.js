@@ -20,7 +20,7 @@ const retrieveCells = () => {
     return [
       { type: "cell-1", title: "Do it" },
       { type: "cell-2", title: "Schedule it" },
-      { type: "cell-3", title: "Automate it" },
+      { type: "cell-3", title: "Delegate it" },
       { type: "cell-4", title: "Delete it" },
     ];
   }
