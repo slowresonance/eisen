@@ -12,6 +12,16 @@ body {
   background-color: var(--background);
 }
 
+#root {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: fit-content;
+}
+
 #matrix {
   margin: 3em auto;
   max-width: 900px;
