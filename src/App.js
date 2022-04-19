@@ -222,7 +222,7 @@ function App() {
           setTaskTarget={setTaskTarget}
         ></Input>
       ) : (
-        ""
+        <></>
       )}
 
       {deletedTaskType !== "" ? (
@@ -234,7 +234,7 @@ function App() {
           setDeletedTaskType={setDeletedTaskType}
         ></Undo>
       ) : (
-        ""
+        <></>
       )}
     </Fragment>
   );
