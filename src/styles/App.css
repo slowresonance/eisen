@@ -20,12 +20,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+a {
+  color: var(--f_low);
+  text-decoration: none;
 }
 
 #matrix {
@@ -46,12 +55,12 @@ header {
 
 .cell:nth-child(1),
 .cell:nth-child(3) {
-  border-right: 1px dashed var(--b_mid);
+  border-right: 1px dashed var(--b_med);
 }
 
 .cell:nth-child(1),
 .cell:nth-child(2) {
-  border-bottom: 1px dashed var(--b_mid);
+  border-bottom: 1px dashed var(--b_med);
 }
 
 .cell-head {
@@ -64,6 +73,11 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: text;
 }
 
 .cell-body {
@@ -75,6 +89,10 @@ header {
 
 .add-task {
   color: var(--f_inv);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .task {
@@ -157,8 +175,23 @@ svg:focus {
   position: -webkit-sticky;
   position: sticky;
   bottom: 3em;
-  z-index: 5;
+  z-index: 40;
   margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+}
+
+#input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 3em;
+  z-index: 20;
   -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
 }
@@ -176,6 +209,88 @@ svg:focus {
 
 #undo-link:hover {
   cursor: pointer;
+}
+
+#menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 1em;
+  z-index: 10;
+}
+
+#menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#menu-toggle {
+  color: var(--f_low);
+  background-color: var(--b_high);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  padding: 0.1em 1em 0.4em 1em;
+  margin-top: 1.3em;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+          box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+}
+
+#menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--f_low);
+  background-color: var(--b_high);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 6px;
+  padding: 0.4em 1em 0.6em 1em;
+  margin-right: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+          box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+}
+
+#menu div:last-child {
+  margin-right: 0;
+}
+
+#menu div svg {
+  margin-right: 5px;
+  stroke: var(--f_low);
+}
+
+#star a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 svg {
@@ -197,7 +312,7 @@ svg {
   position: -webkit-sticky;
   position: sticky;
   bottom: 3em;
-  z-index: 10;
+  z-index: 20;
   -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
 }
@@ -221,7 +336,7 @@ textarea {
 }
 
 .visually-hidden {
-  display: none;
+  display: none !important;
 }
 
 .secret {
@@ -258,28 +373,29 @@ textarea {
         grid-template-columns: repeat(1, 1fr);
     margin: 0 auto 3em auto;
   }
-  #input-container {
+  #input-container,
+  #undo {
     bottom: 1em;
   }
 }
 
 ::-moz-selection {
   color: var(--background);
-  background-color: var(--f_mid);
+  background-color: var(--f_med);
 }
 
 ::selection {
   color: var(--background);
-  background-color: var(--f_mid);
+  background-color: var(--f_med);
 }
 
 :root {
   --f_high: #eee;
-  --f_mid: #ccc;
+  --f_med: #ccc;
   --f_low: #aaa;
   --f_inv: #777;
   --b_high: #333;
-  --b_mid: #444;
+  --b_med: #444;
   --b_low: #555;
   --b_inv: #666;
   --background: #222;

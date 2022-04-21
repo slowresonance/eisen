@@ -3,6 +3,7 @@ import "./styles/App.css";
 import Cell from "./components/Cell";
 import Input from "./components/Input";
 import Undo from "./components/Undo";
+import Menu from "./components/Menu";
 import { DragDropContext } from "react-beautiful-dnd";
 
 const retrieveData = () => {
@@ -63,7 +64,6 @@ function App() {
       type: "text/json",
     });
 
-    console.log(blob);
     const link = document.createElement("a");
 
     link.download = filename;
@@ -236,6 +236,12 @@ function App() {
       ) : (
         <></>
       )}
+      <Menu
+        setTasks={setTasks}
+        taskTarget={taskTarget}
+        deletedTaskType={deletedTaskType}
+        exportTasks={exportTasks}
+      ></Menu>
     </Fragment>
   );
 }
