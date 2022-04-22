@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "eisen",
+  "author": "Mohanvenkat",
+  "version": "1.0",
+  "description": "decision matrix",
+  "icons": {
+    "32": "favicon.png",
+    "128": "favicon.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"]
+}
