@@ -9,7 +9,14 @@ function readFileContent(file) {
   });
 }
 
-const Menu = ({ setTasks, taskTarget, deletedTaskType, exportTasks }) => {
+const Menu = ({
+  setTasks,
+  setCells,
+  divider,
+  taskTarget,
+  deletedTaskType,
+  exportTasks,
+}) => {
   const [toggle, setToggle] = useState(false);
 
   const getFile = (event) => {
@@ -22,8 +29,10 @@ const Menu = ({ setTasks, taskTarget, deletedTaskType, exportTasks }) => {
   const placeFileContent = (file) => {
     readFileContent(file)
       .then((content) => {
-        console.log(JSON.parse(content));
-        setTasks(JSON.parse(content));
+        let [tasks, cells, theme] = content.split(divider);
+        setTasks(JSON.parse(tasks));
+        setCells(JSON.parse(cells));
+        localStorage.setItem("theme", theme);
       })
       .catch((error) => console.log(error));
   };

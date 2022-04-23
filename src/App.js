@@ -57,12 +57,21 @@ function App() {
   const [deletedTaskType, setDeletedTaskType] = useState("");
   const undoTimerRef = useRef(null);
   const inputRef = useRef();
+  const divider = "|-----|";
 
   const exportTasks = () => {
     const filename = `eisen-${dateToYMD(new Date())}.json`;
-    const blob = new Blob([localStorage.getItem("matrixbeta")], {
-      type: "text/json",
-    });
+    let tasks = localStorage.getItem("matrixbeta");
+    let cells = localStorage.getItem("matrixbeta-cells");
+    let theme = localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : `{"background":"#222222","f_high":"#eeeeee","f_med":"#cccccc","f_low":"#aaaaaa","f_inv":"#777777","b_high":"#333333","b_med":"#444444","b_low":"#555555","b_inv":"#666666"}`;
+    const blob = new Blob(
+      [tasks, divider, cells, divider, theme ? theme : ""],
+      {
+        type: "text/json",
+      }
+    );
 
     const link = document.createElement("a");
 
@@ -238,6 +247,8 @@ function App() {
       )}
       <Menu
         setTasks={setTasks}
+        setCells={setCells}
+        divider={divider}
         taskTarget={taskTarget}
         deletedTaskType={deletedTaskType}
         exportTasks={exportTasks}
