@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/src/styles/fonts
+
 # misc
 .DS_Store
 .env.local

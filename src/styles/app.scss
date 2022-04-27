@@ -5,9 +5,8 @@
 
 body {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
+  font-family: var(--font-fam);
+  font-weight: 300;
   color: var(--f_low);
   background-color: var(--background);
 }
@@ -260,8 +259,7 @@ svg {
 input,
 textarea {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-fam);
   border: none;
   outline: none;
   width: 100%;
@@ -334,6 +332,8 @@ textarea {
   --background: #222;
 
   --m-c: calc(1vh / 1vw);
+  --font-fam: lars, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -438,4 +438,22 @@ body {
 .icon {
   color: var(--f_high) !important;
   stroke: var(--f_high) !important;
+}
+
+@font-face {
+  font-family: "lars";
+  font-weight: 400;
+  src: url("./fonts/lars.otf");
+}
+
+@font-face {
+  font-family: "lars";
+  font-weight: 300;
+  src: url("./fonts/lars-light.otf");
+}
+
+@font-face {
+  font-family: "lars";
+  font-weight: 500;
+  src: url("./fonts/lars-med.otf");
 }
