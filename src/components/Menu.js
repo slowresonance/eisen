@@ -85,7 +85,6 @@ const Menu = ({
                 strokeLinejoin="round"
               />
             </svg>
-            Star on GitHub
           </a>
         </div>
       </div>
