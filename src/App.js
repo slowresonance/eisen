@@ -10,7 +10,35 @@ const retrieveData = () => {
   if (localStorage.getItem("matrixbeta")) {
     return JSON.parse(localStorage.getItem("matrixbeta"));
   } else {
-    return { "cell-1": [], "cell-2": [], "cell-3": [], "cell-4": [] };
+    return {
+      "cell-1": [
+        { id: "2I3TBX", content: "This is a example todo", done: false },
+        {
+          id: "DZGDR0",
+          content: "Click on `Add new task` to add a new task",
+          done: false,
+        },
+        {
+          id: "928VKE",
+          content: "Click on the circle to mark as completed",
+          done: true,
+        },
+        {
+          id: "XT8C8U",
+          content: "Click on a completed task to delete it",
+          done: true,
+        },
+      ],
+      "cell-2": [
+        {
+          id: "PNDZWH",
+          content: "You can drop and drop the tasks between cells",
+          done: false,
+        },
+      ],
+      "cell-3": [],
+      "cell-4": [],
+    };
   }
 };
 
