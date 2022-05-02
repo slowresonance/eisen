@@ -32,7 +32,7 @@ const retrieveData = () => {
       "cell-2": [
         {
           id: "PNDZWH",
-          content: "You can drop and drop the tasks between cells",
+          content: "You can drag and drop the tasks between cells",
           done: false,
         },
       ],
