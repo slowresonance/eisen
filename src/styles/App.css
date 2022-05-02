@@ -18,12 +18,12 @@ body {
   justify-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header {
@@ -42,8 +42,8 @@ a {
   max-width: 900px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr)) [auto-fit];
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .cell {
@@ -70,13 +70,13 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   min-height: 30px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: text;
 }
 
@@ -90,9 +90,9 @@ a {
 .add-task {
   color: var(--f_inv);
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .task {
@@ -103,8 +103,8 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .task:hover {
@@ -158,12 +158,12 @@ svg:focus {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 30ch;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: var(--f_low);
   background-color: var(--b_high);
   border-radius: 8px;
@@ -173,16 +173,8 @@ svg:focus {
   bottom: 3em;
   z-index: 40;
   margin: 0 auto;
-  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
 }
 
 #input-container {
@@ -190,22 +182,14 @@ svg:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: -webkit-sticky;
   position: sticky;
   bottom: 3em;
   z-index: 20;
-  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
 }
 
 #undo-text {
@@ -229,11 +213,11 @@ svg:focus {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   bottom: 1em;
@@ -245,8 +229,8 @@ svg:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #menu-toggle {
@@ -260,7 +244,7 @@ svg:focus {
   margin-top: 1.3em;
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
-  box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+          box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
 }
 
 #menu div {
@@ -268,8 +252,8 @@ svg:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: var(--f_low);
   background-color: var(--b_high);
   width: -webkit-fit-content;
@@ -280,11 +264,11 @@ svg:focus {
   margin-right: 1em;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
-  box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
+          box-shadow: rgba(0, 0, 0, 0.11) 0px 8px 24px;
 }
 
 #menu div label {
@@ -304,8 +288,8 @@ svg:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 svg {
@@ -322,22 +306,14 @@ svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: -webkit-sticky;
   position: sticky;
   bottom: 3em;
   z-index: 20;
-  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067),
-    0px 0px 3.2px -35px rgba(0, 0, 0, 0.094),
-    0px 0px 6.6px -35px rgba(0, 0, 0, 0.113),
-    0px 0px 13.5px -35px rgba(0, 0, 0, 0.157),
-    0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 1.3px -35px rgba(0, 0, 0, 0.067), 0px 0px 3.2px -35px rgba(0, 0, 0, 0.094), 0px 0px 6.6px -35px rgba(0, 0, 0, 0.113), 0px 0px 13.5px -35px rgba(0, 0, 0, 0.157), 0px 0px 37px -35px rgba(0, 0, 0, 0.25);
 }
 
 input,
@@ -392,8 +368,8 @@ textarea {
     margin-bottom: 2em;
   }
   #matrix {
-    -ms-grid-columns: (1fr) [1];
-    grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
     margin: 0 auto 3em auto;
   }
   #input-container,
@@ -459,55 +435,55 @@ textarea {
 
 .slide-in {
   -webkit-animation: slide-in 1000ms;
-  animation: slide-in 1000ms;
+          animation: slide-in 1000ms;
 }
 
 .slide-out {
   -webkit-animation: slide-out 1000ms;
-  animation: slide-out 1000ms;
+          animation: slide-out 1000ms;
 }
 
 @-webkit-keyframes slide-in {
   from {
     -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+            transform: translateY(100%);
   }
   to {
     -webkit-transform: translate(0%);
-    transform: translate(0%);
+            transform: translate(0%);
   }
 }
 
 @keyframes slide-in {
   from {
     -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+            transform: translateY(100%);
   }
   to {
     -webkit-transform: translate(0%);
-    transform: translate(0%);
+            transform: translate(0%);
   }
 }
 
 @-webkit-keyframes slide-out {
   from {
     -webkit-transform: translate(0%);
-    transform: translate(0%);
+            transform: translate(0%);
   }
   to {
     -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+            transform: translateY(100%);
   }
 }
 
 @keyframes slide-out {
   from {
     -webkit-transform: translate(0%);
-    transform: translate(0%);
+            transform: translate(0%);
   }
   to {
     -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+            transform: translateY(100%);
   }
 }
 
