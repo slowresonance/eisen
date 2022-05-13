@@ -79,8 +79,6 @@ const Menu = ({
             >
               <path
                 d="M9 1L11.472 5.93691L17 6.73344L13 10.5741L13.944 16L9 13.4369L4.056 16L5 10.5741L1 6.73344L6.528 5.93691L9 1Z"
-                fill="#777777"
-                stroke="#777777"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -99,7 +97,6 @@ const Menu = ({
           >
             <path
               d="M1 1L7 7L13 1"
-              stroke="#777777"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -115,7 +112,6 @@ const Menu = ({
           >
             <path
               d="M13 7L7 1L1 7"
-              stroke="#777777"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
