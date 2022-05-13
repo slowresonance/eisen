@@ -348,6 +348,15 @@ textarea {
   background-color: var(--background);
 }
 
+#star path,
+#menu-toggle path {
+  stroke: var(--f_low);
+}
+
+#star path {
+  fill: var(--f_low);
+}
+
 @media (max-width: 801px) {
   .cell:nth-child(1),
   .cell:nth-child(2),
